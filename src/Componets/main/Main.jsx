@@ -36,7 +36,7 @@ const grandTotal = total+totalShipping+tax;
         cards.map(card=><Card AddToCart={AddToCart} card={card}></Card>)
     }
     </div>
-         <div className='basis-1/5 sticky top-0 left-0'>
+         <div className='basis-1/5 '>
                <Cart cart={cart} total={total} totalShipping={totalShipping} tax={tax} grandTotal={grandTotal}></Cart>
            </div>
 
