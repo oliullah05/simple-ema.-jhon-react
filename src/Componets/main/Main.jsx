@@ -17,16 +17,14 @@ const cartArr = [...cart,product];
 setCart(cartArr)
 }
 
-
-
-
-
-
-
-
-
-
-
+let total = 0;
+let totalShipping =0;
+for(let product of cart){
+    total =total +product.price;
+    totalShipping = totalShipping + product.shipping;
+}
+const tax = (total*7)/100;
+const grandTotal = total+totalShipping+tax;
 
 
 
@@ -38,9 +36,8 @@ setCart(cartArr)
         cards.map(card=><Card AddToCart={AddToCart} card={card}></Card>)
     }
     </div>
-         <div className='basis-1/5'>
-            <p>{cart.length}</p>
-               <Cart></Cart>
+         <div className='basis-1/5 sticky top-0 left-0'>
+               <Cart cart={cart} total={total} totalShipping={totalShipping} tax={tax} grandTotal={grandTotal}></Cart>
            </div>
 
 
